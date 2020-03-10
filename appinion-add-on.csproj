@@ -161,6 +161,9 @@
     <Compile Include="AddPresentationForm.xaml.cs">
       <DependentUpon>AddPresentationForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddQuestionForm.xaml.cs">
+      <DependentUpon>AddQuestionForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -208,6 +211,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddQuestionForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppinionLogo.ico" />
@@ -224,6 +231,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>6DC409C1B6CE66F9E66101A3428BB6005AD2B1AC</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

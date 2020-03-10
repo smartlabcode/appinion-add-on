@@ -20,6 +20,11 @@ namespace appinion_add_on
     /// </summary>
     public partial class AddPresentationForm : Window
     {
+
+        ConnectionClass CC = new ConnectionClass();
+
+        ListBox pitanjaListBox = new ListBox();
+
         public AddPresentationForm()
         {
             InitializeComponent();
@@ -27,15 +32,26 @@ namespace appinion_add_on
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
-
             String userInput = presentationIdText.Text;
 
+            if (CC.checkPresentations(userInput))
+            {
+                AddQuestionForm AQF = new AddQuestionForm();
 
+                for(int i = 0; i<CC.getPresentations(userInput).Count; i++)
+                {
+                    AQF.pitanjaListBox.Items.Add(CC.getPresentations(userInput)[i]);
+                }
 
-            ConnectionClass CS = new ConnectionClass(userInput);
-
-
+                AQF.Show();
+                this.Close();
+                
+            }
+            else
+            {
+                MessageBox.Show("Prezentacija ne postoji");
+            }
         }
+
     }
 }
